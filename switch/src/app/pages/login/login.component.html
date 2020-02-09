@@ -1,0 +1,33 @@
+<div class="container" fxLayout="row" fxLayout.xs="column" fxlayoutWrap fxLayoutGap="0.5%"
+    fxLayoutAlign="center center">
+    <div fxFlex.xl="35%" fxFlex.lg="25%" fxFlex.md="45%" fxFlex.sm="55%" fxFlex.xs="55  %">
+        <mat-toolbar color="primary" fxLayoutAlign="center center">
+            <img src="assets/img/Sykes_logo.png" alt="" class="header-logo">
+        </mat-toolbar>
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center">
+                Inicia Sesion Para Continuar
+            </mat-card-header>
+            <mat-card-content>
+                <form #form="ngForm" (submit)="signIn(form)" [class.loading]="loading">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Usuario</mat-label>
+                        <input matInput placeholder="Usuario" name="user" ngModel>
+                        <mat-icon matSuffix>person</mat-icon>
+                        <mat-hint>Ingresa tu usuario de red.</mat-hint>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput placeholder="Contraseña" name="password" ngModel type="password">
+                        <mat-icon matSuffix>lock</mat-icon>
+                        <mat-hint>Ingresa tu contraseña.</mat-hint>
+                    </mat-form-field>
+                    <button type="submit" mat-raised-button color="primary" fcFlex="60%" class="btn-login">Ingresar</button>
+                </form>
+            </mat-card-content>
+            <mat-card-footer fxLayoutAlign="center center">
+                <p class="statement">© Copyright 2020 SYKES Latin America – All Rights Reserved</p>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+</div>
