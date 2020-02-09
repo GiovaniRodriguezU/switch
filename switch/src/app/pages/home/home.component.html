@@ -1,1 +1,67 @@
-<p>home works!</p>
+<section class="hero-switch" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+    <mat-card fxFlex="70">
+        <mat-card-header fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+            <mat-card-title>Encuentra los mejores departamentos en renta</mat-card-title>
+        </mat-card-header>
+        <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+            <mat-form-field class="search-form" appearance="outline">
+                <mat-label>Buscar por ciudad o palabra clave</mat-label>
+                <input matInput>
+                <button mat-icon-button matSuffix color="primary">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </mat-form-field>
+            <div>
+                <div fxFlex="100">
+                    <div fxLayoutAlign="start start" fxLayout="row">
+                        <button mat-icon-button color="primary" matTooltip="Departamento">
+                            <mat-icon>apartment</mat-icon>
+                        </button>
+                        <button mat-icon-button color="primary" matTooltip="Casa">
+                            <mat-icon>house</mat-icon>
+                        </button>
+                        <button mat-icon-button color="primary" matTooltip="Cuarto">
+                            <mat-icon>meeting_room</mat-icon>
+                        </button>
+                        <button mat-icon-button color="primary" matTooltip="Local">
+                            <mat-icon>storefront</mat-icon>
+                        </button>
+                        <mat-slider color="primary" min="2000" max="50000" step="2000" thumbLabel></mat-slider>
+                        <mat-slider color="primary" min="1" max="5" step="1" thumbLabel></mat-slider>
+                    </div>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</section>
+<section fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+    <mat-card fxFlex="60">
+        <mat-list fxLayout="column" fxLayout>
+            <mat-list-item fxFlex>
+                <mat-icon matListIcon color="primary">timer</mat-icon>
+                <h2 matLine>Ahorra Tiempo</h2>
+                <p matLine>
+                    <span>Ahorra hasta en 25%</span>
+                </p>
+            </mat-list-item>
+            <mat-list-item fxFlex>
+                <mat-icon matListIcon color="primary">security</mat-icon>
+                <h2 matLine>Mas seguro</h2>
+                <p matLine>
+                    <span>Ahorra hasta en 25%</span>
+                </p>
+            </mat-list-item>
+            <mat-list-item fxFlex>
+                <mat-icon matListIcon color="primary">attach_money</mat-icon>
+                <h2 matLine>Ahorra Tiempo</h2>
+                <p matLine>
+                    <span>Ahorra hasta en 25%</span>
+                </p>
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+</section>
+<section fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+
+</section>

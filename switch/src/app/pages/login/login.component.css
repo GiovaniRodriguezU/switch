@@ -1,0 +1,33 @@
+.container {
+    height: 95vh;
+    background-image: url(../../../assets/img/login_img.jpg);
+    background-size: cover;
+}
+
+.header-logo {
+    height: 40px;
+    width: 120px;
+}
+
+.mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn-login {
+    width: 100%;
+}
+
+.mat-card-header {
+    margin-bottom: 20px;
+}
+
+.statement {
+    font-size: 12px;
+}
+
+.login-toggle {
+    margin-top: 20px;
+    cursor: pointer;
+    color: grey;
+}

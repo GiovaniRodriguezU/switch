@@ -19,10 +19,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatSelectModule} from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSliderModule } from '@angular/material/slider';
+
+
 
 // firebase config
 import { environment } from '../environments/environment';
@@ -34,6 +38,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 
@@ -42,14 +47,15 @@ import { LoginComponent } from './pages/login/login.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
 
@@ -67,6 +73,9 @@ import { LoginComponent } from './pages/login/login.component';
     MatListModule,
     MatDialogModule,
     MatSelectModule,
+    MatTooltipModule,
+    MatSliderModule,
+
     // firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,

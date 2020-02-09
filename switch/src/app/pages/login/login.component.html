@@ -2,31 +2,54 @@
     fxLayoutAlign="center center">
     <div fxFlex.xl="35%" fxFlex.lg="25%" fxFlex.md="45%" fxFlex.sm="55%" fxFlex.xs="55  %">
         <mat-toolbar color="primary" fxLayoutAlign="center center">
-            <img src="assets/img/Sykes_logo.png" alt="" class="header-logo">
+            <h3>Switch</h3>
         </mat-toolbar>
         <mat-card>
             <mat-card-header fxLayoutAlign="center center">
-                Inicia Sesion Para Continuar
+                <p *ngIf="isLogin">Inicia Sesion Para Continuar</p>
+                <p *ngIf="isSignup">Proporciona tus datos</p>
+
             </mat-card-header>
             <mat-card-content>
                 <form #form="ngForm" (submit)="signIn(form)" [class.loading]="loading">
+                    <mat-form-field appearance="outline" *ngIf="isSignup">
+                        <mat-label>Nombre de usuario</mat-label>
+                        <input matInput name="userName" ngModel>
+                        <mat-icon matSuffix color="primary">person</mat-icon>
+                        <mat-hint>Ingresa tu nombre completo</mat-hint>
+                    </mat-form-field>
                     <mat-form-field appearance="outline">
                         <mat-label>Usuario</mat-label>
-                        <input matInput placeholder="Usuario" name="user" ngModel>
-                        <mat-icon matSuffix>person</mat-icon>
-                        <mat-hint>Ingresa tu usuario de red.</mat-hint>
+                        <input matInput name="user" ngModel>
+                        <mat-icon matSuffix color="primary">email</mat-icon>
+                        <mat-hint>Ingresa tu usuario correo electronico.</mat-hint>
                     </mat-form-field>
                     <mat-form-field appearance="outline">
                         <mat-label>Contraseña</mat-label>
-                        <input matInput placeholder="Contraseña" name="password" ngModel type="password">
-                        <mat-icon matSuffix>lock</mat-icon>
+                        <input matInput name="password" ngModel type="password">
+                        <mat-icon matSuffix color="primary">lock</mat-icon>
                         <mat-hint>Ingresa tu contraseña.</mat-hint>
+                        <mat-error *ngIf="error">{{error}}</mat-error>
+
                     </mat-form-field>
-                    <button type="submit" mat-raised-button color="primary" fcFlex="60%" class="btn-login">Ingresar</button>
+                    <div class="actions">
+                        <button type="submit" mat-raised-button color="primary"
+                            class="btn-login">{{ action | uppercase}}</button>
+                        <br>
+                        <div fxLayoutAlign="center center" class="login-toggle">
+                            <span *ngIf="isLogin">
+                                <a (click)="action = 'registrarse' ">Registrate</a>
+                            </span>
+                            <span *ngIf="isSignup">
+                                <a (click)="action = 'ingresar' ">Inicia Sesion</a>
+                            </span>
+                        </div>
+                    </div>
+
                 </form>
             </mat-card-content>
             <mat-card-footer fxLayoutAlign="center center">
-                <p class="statement">© Copyright 2020 SYKES Latin America – All Rights Reserved</p>
+                <p class="statement">© Copyright 2020 Switch – All Rights Reserved</p>
             </mat-card-footer>
         </mat-card>
     </div>
