@@ -9,6 +9,11 @@ import { AuthenticationService } from './core/authentication.service';
 export class AppComponent {
   constructor(public auth: AuthenticationService) { }
 
-  signOut(){
+  signOut() {
     this.auth.signOut();
-  }}
+  }
+
+  logUser() {
+    console.log(this.auth.user$);
+  }
+}

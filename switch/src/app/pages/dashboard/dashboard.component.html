@@ -1,1 +1,40 @@
-<p>dashboard works!</p>
+<div class="container">
+    <div fxLayout="row">
+        <div fxFlex="20%">
+            <mat-card>
+                <form fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="gappx" #newEstate="ngForm"
+                    (submit)="onSubmit(newEstate)">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Titulo</mat-label>
+                        <input matInput id="title" name="title" ngModel>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Costo</mat-label>
+                        <input matInput id="cost" name="cost" ngModel>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>imagen</mat-label>
+                        <input matInput id="estateImage" name="estateImage" ngModel>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Cuartos</mat-label>
+                        <input matInput id="bedrooms" name="bedrooms" ngModel>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Baños</mat-label>
+                        <input matInput id="bathrooms" name="bathrooms" ngModel>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Mascotas</mat-label>
+                        <input matInput id="pets" name="pets" ngModel>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Metros Cuadrados</mat-label>
+                        <input matInput  id="squareMeters" name="squareMeters" ngModel>
+                    </mat-form-field>
+                    <button mat-raised-button type="submit">Submit</button>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>

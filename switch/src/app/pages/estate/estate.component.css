@@ -1,0 +1,41 @@
+.container {
+    padding-top: 15px;
+}
+
+.mat-radio-button {
+    padding-top: 10px;
+}
+
+.mat-slider {
+    width: 100%;
+}
+
+hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: gray;
+}
+
+.icon-divider {
+    width: 0;
+    border-right: 1px solid #e3e6f0;
+    height: calc(4.375rem - 2rem);
+    margin: auto 1rem;
+}
+
+.descripcion-inmueble {
+width: 100%;
+}
+
+.estate-list {
+    margin: 10px;
+}
+
+.card-image {
+    height: 220px;
+    cursor: pointer;
+}
+
+.card-image :hover {
+    cursor: pointer;
+}

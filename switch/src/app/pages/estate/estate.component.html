@@ -1,0 +1,76 @@
+<div class="container">
+    <div fxLayout="row" fxLayoutAlign="space-around">
+        <div fxFlex="25%">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Filtros</mat-card-title>
+                    <mat-card-subtitle>Usa los filtros para buscar la casa perfectas</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <form>
+                        <label id="inmueble-label">¿Que tipo de inmueble buscas?</label>
+                        <mat-radio-group aria-labelledby="inmueble-label" fxLayout="column">
+                            <mat-radio-button *ngFor="let inmueble of inmuebles" [value]="inmueble">
+                                {{inmueble}}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                        <hr>
+                        <label id="costo-label">¿Cual es el costo que buscas?</label>
+                        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" min="1" max="100000">
+                        </mat-slider>
+                    </form>
+                </mat-card-content>
+
+            </mat-card>
+        </div>
+        <div fxFlex="72%" *ngIf="est.estates$ | async as estates">
+
+            <div fxLayout="row wrap">
+                <mat-card fxFlex="30%" class="estate-list" *ngFor="let est of estates">
+                    <mat-card-header>
+
+                        <img mat-card-avatar src="../../../assets/img/user-image-default.jpg">
+                        <mat-card-title>{{est.cost}}</mat-card-title>
+                        <mat-card-subtitle>{{est.title}}</mat-card-subtitle>
+
+                        <div class="spacer"></div>
+                        <button mat-icon-button>
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <button mat-icon-button>
+                            <mat-icon>favorite</mat-icon>
+                        </button>
+                    </mat-card-header>
+                    <img mat-card-image [src]="est.estateImage" alt="Photo of a Shiba Inu" class="card-image">
+                    <mat-card-content fxLayout="column" fxLayoutAlign="space-around">
+                        <div class="descripcion-inmueble">
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="space-around">
+                            <div>
+                                <mat-icon [matBadge]="est.bedrooms" matBadgeColor="warn" color="primary">king_bed
+                                </mat-icon>
+                            </div>
+                            <div class="icon-divider"></div>
+                            <div>
+                                <mat-icon [matBadge]="est.bathrooms" matBadgeColor="warn" color="primary">bathtub
+                                </mat-icon>
+                            </div>
+                            <div class="icon-divider"></div>
+                            <div>
+                                <mat-icon matBadgeColor="warn" color="accent" *ngIf="!est.pets">pets</mat-icon>
+                                <mat-icon matBadgeColor="warn" color="primary" *ngIf="est.pets">pets</mat-icon>
+
+                            </div>
+                            <div class="icon-divider"></div>
+
+                            <div>
+                                <mat-icon [matBadge]="est.squareMeters" matBadgeColor="warn" color="primary">house
+                                </mat-icon>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

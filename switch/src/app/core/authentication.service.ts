@@ -26,19 +26,19 @@ export class AuthenticationService {
   }
   async signIn(email, password) {
     await this.afAuth.auth.signInWithEmailAndPassword(email, password);
-    return this.router.navigate['/dashboard']
+    return this.router.navigate(['/dashboard']);
   }
 
   async signUpEmail(email, password, userName) {
     const resp = await this.afAuth.auth.createUserWithEmailAndPassword( email, password);
     await resp.user.updateProfile({ displayName: userName});
     let uid = resp.user.uid;
-    await this.afs.collection("users").add({email, password, userName, uid});
-    return this.router.navigate['/dashboard']
+    await this.afs.doc(`users/${uid}`).set({email, password, userName, uid});
+    return this.router.navigate(['/dashboard']);
   }
 
   async signOut() {
     await this.afAuth.auth.signOut();
-    return this.router.navigate['/'];
+    return this.router.navigate(['/']);
   }
 }

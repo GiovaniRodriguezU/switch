@@ -25,6 +25,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSliderModule } from '@angular/material/slider';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 
 
@@ -39,6 +41,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { EstateComponent } from './pages/estate/estate.component';
 
 
 
@@ -48,7 +51,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    EstateComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +79,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     MatSelectModule,
     MatTooltipModule,
     MatSliderModule,
+    MatRadioModule,
 
     // firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),

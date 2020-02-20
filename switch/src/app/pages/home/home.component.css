@@ -15,3 +15,20 @@
 section {
     margin-bottom: 20px;
 }
+
+.container {
+    height: 100%;
+}
+
+.side-image {
+    background-image: url(../../../assets/img/house_searching.png);
+    background-size: cover;
+}
+
+.right-side {
+    background-color: #fff;
+}
+
+.landing-page {
+    height: 70% ;
+}
